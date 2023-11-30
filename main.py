@@ -36,7 +36,7 @@ def send_data(data: list[KoreaAirforceJobDataResponse]):
     msg = WebhookMessage(
         content="군 지원 정보를 조회했습니다!",
         avatar_url=webhook_cfg["avatar"],
-        username=webhook_cfg["avatar"],
+        username=webhook_cfg["username"],
         embeds=[]
     )
     
@@ -62,7 +62,7 @@ def handle_400():
     msg = WebhookMessage(
         content="잘못된 API 요청입니다! 프로젝트 저장소에 이슈를 통해 제보해주세요!",
         avatar_url=webhook_cfg["avatar"],
-        username=webhook_cfg["avatar"],
+        username=webhook_cfg["username"],
     )
     with open("./response.json", mode="wt", encoding="utf-8") as res_file:
         dump(msg.to_dict(), res_file, ensure_ascii=False, indent=4)
@@ -73,7 +73,7 @@ def handle_500():
     msg = WebhookMessage(
         content="병무청 API 서버에 문제가 있습니다! 프로그램의 문제가 아니며 병무청 서버가 정상화 되는걸 기다려 주세요!",
         avatar_url=webhook_cfg["avatar"],
-        username=webhook_cfg["avatar"],
+        username=webhook_cfg["username"],
     )
     with open("./response.json", mode="wt", encoding="utf-8") as res_file:
         dump(msg.to_dict(), res_file, ensure_ascii=False, indent=4)
@@ -84,7 +84,7 @@ def handle_error():
     msg = WebhookMessage(
         content="병무청에서 군 지원 현황 정보를 조회하던 중 오류가 발생했습니다!",
         avatar_url=webhook_cfg["avatar"],
-        username=webhook_cfg["avatar"],
+        username=webhook_cfg["username"],
     )
     with open("./response.json", mode="wt", encoding="utf-8") as res_file:
         dump(msg.to_dict(), res_file, ensure_ascii=False, indent=4)
