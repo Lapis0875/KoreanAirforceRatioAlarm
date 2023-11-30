@@ -32,10 +32,13 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
-      # 3. 군 지원 현황 정보를 조회하는 파이썬 스크립트를 실행한다.
+      # 3. 필요한 패키지들을 설치한다.
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+      # 4. 군 지원 현황 정보를 조회하는 파이썬 스크립트를 실행한다.
       - name: Display Python version
         run: python main.py
-      # 4. 조회한 정보를 디스코드 웹훅으로 전송한다.
+      # 5. 조회한 정보를 디스코드 웹훅으로 전송한다.
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.3.0
         with:
