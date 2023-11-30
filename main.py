@@ -45,7 +45,7 @@ def send_data(data: list[KoreaAirforceJobDataResponse]):
         msg.embeds.append(Embed(
             title=f"{do.job_name} ({do.job_code})",
             fields=[
-                Field("모집 인원", str(do.planned), False),
+                Field("모집 인원", str(do.planned), True),
                 Field("접수 인원", str(do.enrolled), True),
                 Field("경쟁률", str(do.rate), True),
                 Field("과부족", f"{do.more_or_less} ({'미달' if do.is_below else '초과'})", False)
