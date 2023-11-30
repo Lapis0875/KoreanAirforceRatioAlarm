@@ -1,0 +1,20 @@
+{
+    "webhook": {
+        "url": "https://discord.com/api/webhooks/1179793507955769404/aenOq4kA04_oxvXukz5ahD-A9V4fVuq3HREz5jDH12NXBx_7Mt8Any98jkT8ZXeQJ91y",
+        "username": "공군 경쟁률 현황",
+        "avatar": "https://play-lh.googleusercontent.com/rMs0p8YUfBP5pg8cBqYhGCH9d896G6gygU-sPlsD66N36NeB1_q9SNbus18fs0MoVhs"
+    },
+    "query": {
+        "start_date": "2023.11.29",
+        "finish_date": "2023.12.06",
+        "category": {
+            "name": "일반기술/전문기술병(전문화관리병포함)",
+            "index": 1
+        },
+        "recruit": "2024년03월",
+        "apply": {
+            "year": 2023,
+            "month": 12
+        }
+    }
+}
