@@ -5,7 +5,6 @@ __all__ = ("WebhookConfig", "QueryConfig", "ActionConfig", "read_config")
 
 class WebhookConfig(TypedDict):
     """Webhook 관련 설정 컨피그입니다."""
-    url: str        # Discord Webhook URL
     username: str   # Discord Webhook Username
     avatar: str     # Discord Webhook Avatar URL
 
