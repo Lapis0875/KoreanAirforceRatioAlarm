@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Action의 실행 조건:
+  # cron 작업으로 갱신하거나
+  schedule:
+    - cron: '0 2 * * *'
+  
+  # 저장소에 push가 발생하거나
+  push:
+    branches: [ "main" ]
+
+  # 수동으로도 실행할 수 있다.
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # 이 worflow는 "fetch"라는 단일 작업을 수행한다.
+  fetch:
+    # 이 job이 실행될 환경 (runner라고 부른다)이다.
+    runs-on: ubuntu-latest
+
+    # job에서 수행할 작업들을 순서대로 정의한다.
+    steps:
+      # 1. Github 저장소 ($GITHUB_WORKSPACE)를 checkout한다. 이를 통해, 현재 job이 저장소 내 파일에 접근할 수 있게 된다.
+      - uses: actions/checkout@v4
+      # 2. 파이썬 환경을 세팅한다.
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+      # 3. 군 지원 현황 정보를 조회하는 파이썬 스크립트를 실행한다.
+      - name: Display Python version
+        run: python main.py
+      # 4. 조회한 정보를 디스코드 웹훅으로 전송한다.
+      - name: Discord Webhook Action
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.WEBHOOK_DISCORD_URL }}
+          raw-data: response.json
