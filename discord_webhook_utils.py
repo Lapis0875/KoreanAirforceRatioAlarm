@@ -172,6 +172,8 @@ class Embed:
             payload["provider"] = self.provider.to_dict()
         if self.author is not None:
             payload["author"] = self.author.to_dict()
+        if self.fields is not None and len(self.fields):
+            payload["fields"] = [f.to_dict() for f in self.fields]
         return payload
 
 @dataclass(repr=True, eq=False, order=False, slots=True)
