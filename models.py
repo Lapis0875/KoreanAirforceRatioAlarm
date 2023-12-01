@@ -62,8 +62,8 @@ def parse_job_response(resp: KoreaAirforceJobDataResponse) -> KoreaAirforceJobDa
     return KoreaAirforceJobData(
         job_name=resp["gsteukgi_nm"],
         job_code=int(resp["gsteukgi_cd"]),
-        planned=int(resp["jeopsu_pcnt"]),
-        enrolled=int(resp["seonbal_pcnt"]),
+        planned=int(resp["seonbal_pcnt"]),
+        enrolled=int(resp["jeopsu_pcnt"]),
         rate=float(resp["rate"]),
         more_or_less=int(resp["extremes"])
     )
