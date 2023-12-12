@@ -6,8 +6,8 @@ name: Discord Webhook
 on:
   # Action의 실행 조건:
   # cron 작업으로 갱신하거나
-  schedule:
-    - cron: '0 0/2 * * *'    # 0시부터 2시간 간격으로 실행.
+  # schedule:
+  #   - cron: '0 0/2 * * *'    # 0시부터 2시간 간격으로 실행.
   
   # 저장소에 push가 발생하거나
   push:
