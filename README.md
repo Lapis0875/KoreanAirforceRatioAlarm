@@ -1,13 +1,18 @@
 # KoreanAirforceRatioAlarm
+
 공군 지원현황 정보를 원하는 시간대에 자동으로 조회해 웹훅으로 보내줍니다.
+모든 보라매 여러분들의 입대 준비 및 군생활을 응원합니다.
++ 저는 현재 공군 병 856기로 복무중입니다 ㅎㅎ
 
 # How To Use?
 
 ## 1. Setup
+
 이 저장소를 포크(fork)해주세요. 이후, 자신의 디스코드 서버에 적당한 채널을 만들어 웹훅을 하나 만들어주세요.
 이후, 저장소의 설정에 들어가 Settings > Secrets and Variables > Actions > Repository Secrets 항목에 "WEBHOOK_DISCORD_URL" 이라는 이름으로 새로운 Secret을 만들고, 그 값으로 앞서 만든 웹훅의 URL을 저장해주세요.
 
 ## 2. Configuration
+
 이제, 어떤 군대(육해공) 의 지원 현황을 볼 것인지 정해야 합니다.
 `config.json` 파일을 열면 아래와 같이 구성되어 있습니다.
 
